@@ -3,15 +3,25 @@ import {MomentModule} from 'ngx-moment';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {HeaderComponent} from './components/header/header.component';
-import {AppComponent} from './app.component';
+import {WelcomeComponent} from './pages/welcome/welcome.component';
+import {AppComponent} from './components/root/app.component';
+import {HomeComponent} from './pages/home/home.component';
+import {AppRoutingModule} from './app-routing.module';
 import {CoreModule} from './core/core.module';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    WelcomeComponent,
+    HomeComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     MomentModule,
     CoreModule
