@@ -12,7 +12,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './components/root/app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/shared.module'
 import { CoreModule } from './core/core.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -33,7 +32,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     MomentModule,
     CoreModule,
-    SharedModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
