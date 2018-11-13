@@ -11,6 +11,7 @@ import {CoreModule} from './core/core.module';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
