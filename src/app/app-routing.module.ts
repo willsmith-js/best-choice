@@ -1,10 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
+import {ContactUsComponent} from './pages/contact-us/contact-us.component';
+import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {WelcomeComponent} from './pages/welcome/welcome.component';
 import {HomeComponent} from './pages/home/home.component';
-import {AboutUsComponent} from './pages/about-us/about-us.component';
-import {ContactUsComponent} from './pages/contact-us/contact-us.component';
+import {NewsModule} from './pages/news/news.module';
+
 
 const appRoute: Routes = [
   {
@@ -22,6 +24,10 @@ const appRoute: Routes = [
   {
     path: 'contact',
     component: ContactUsComponent
+  },
+  {
+    path: 'news',
+    loadChildren: './pages/news/news.module#NewsModule' 
   }
 ];
 
