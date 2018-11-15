@@ -9,10 +9,9 @@ import {WelcomeComponent} from './pages/welcome/welcome.component';
 import {AppComponent} from './components/root/app.component';
 import {HomeComponent} from './pages/home/home.component';
 import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 import {NewsModule} from './pages/news/news.module';
 import {CoreModule} from './core/core.module';
-
-
 
 @NgModule({
   declarations: [
@@ -28,7 +27,8 @@ import {CoreModule} from './core/core.module';
     BrowserModule,
     MomentModule,
     CoreModule,
-    NewsModule
+    NewsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
