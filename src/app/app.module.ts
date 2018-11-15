@@ -12,6 +12,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {NewsModule} from './pages/news/news.module';
 import {CoreModule} from './core/core.module';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {CoreModule} from './core/core.module';
     WelcomeComponent,
     HomeComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    NotFoundComponent
   ],
   imports: [
     AppRoutingModule,
