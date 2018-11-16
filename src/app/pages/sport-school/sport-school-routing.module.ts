@@ -3,7 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import {SportSchoolComponent} from "./components/sport-school.component";
 
 const routes: Routes = [
-    { path: "", component:SportSchoolComponent }
+    { 
+      path: "", 
+      component:SportSchoolComponent 
+    }
 ];
 
 @NgModule({
