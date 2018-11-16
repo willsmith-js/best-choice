@@ -2,10 +2,10 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {ContactUsComponent} from './pages/contact-us/contact-us.component';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {WelcomeComponent} from './pages/welcome/welcome.component';
 import {HomeComponent} from './pages/home/home.component';
-import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 
 const appRoute: Routes = [
