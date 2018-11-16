@@ -26,6 +26,10 @@ const appRoute: Routes = [
     component: ContactUsComponent
   },
   {
+     path: 'sport',
+     loadChildren: "./pages/sport-school/sport-school.module#SportSchoolModule"
+   },
+  {
     path: 'news',
     loadChildren: './pages/news/news.module#NewsModule'
   },
@@ -36,10 +40,10 @@ const appRoute: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(appRoute)
-  ],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(appRoute)
+    ],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {
 }
