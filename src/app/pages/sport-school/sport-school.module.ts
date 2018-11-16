@@ -9,6 +9,8 @@ import { SportSchoolComponent } from './components/sport-school.component';
     CommonModule,
     SportSchoolRoutingModule
   ],
-  declarations: [SportSchoolComponent]
+  declarations: [
+    SportSchoolComponent
+  ]
 })
 export class SportSchoolModule { }
