@@ -3,6 +3,7 @@ import { MomentModule } from 'ngx-moment';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -25,7 +26,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WelcomeComponent,
     HomeComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    NotFoundComponent
   ],
   imports: [
     AppRoutingModule,
