@@ -14,6 +14,7 @@ import { AppComponent } from './components/root/app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
+import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -27,7 +28,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     AboutUsComponent,
     ContactUsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SideBarComponent
   ],
   imports: [
     AppRoutingModule,

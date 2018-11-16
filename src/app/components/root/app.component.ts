@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Best choice';
+  public title = 'Best choice';
+  public showSideBar: Boolean = false;
+
+  constructor(private router: Router) {
+    router.events.subscribe((val) => {
+      if (this.router.url == '/') {
+        this.showSideBar = false
+      } else {
+        this.showSideBar = true
+      }
+    });
+  }
 }
