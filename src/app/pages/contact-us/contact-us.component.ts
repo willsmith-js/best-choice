@@ -18,22 +18,41 @@ export class ContactUsComponent implements OnInit {
       'surname': new FormControl('', [Validators.required, Validators.pattern(ValidatorHelper.nameRegEx), Validators.minLength(2), Validators.maxLength(12)]),
       'email': new FormControl('', [Validators.required, Validators.pattern(ValidatorHelper.emailRegEx)]),
       'phones': new FormArray([new FormControl('+374')]),
-      'subject': new FormControl('', Validators.required),
+      'subject': new FormControl('', [Validators.required, Validators.minLength(7)]),
     })
   }
 
+  public validateAllFormFields(formGroup: FormGroup): void {
+    Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    });
+}
+
   ngOnInit() {
+    console.log(this.contactUsForm.controls["name"])
   }
 
   public submitContactForm(): void {
-    console.log(this.contactUsForm)
+
+    if(this.contactUsForm.invalid){
+      this.validateAllFormFields(this.contactUsForm);
+    } else {
+      console.log(this.contactUsForm.getRawValue());
+      this.contactUsForm.reset();  
+    }
   }
 
   public addPhoneControl(): void {
     const phoneControls = (<FormArray>this.contactUsForm.controls['phones'].controls);
 
     if(phoneControls.length < 4) {
-      (<FormArray>this.contactUsForm.controls['phones'].controls)phoneControls.push(new FormControl('+374'));  
+      phoneControls.push(new FormControl('+374'));
     }
   }
 
