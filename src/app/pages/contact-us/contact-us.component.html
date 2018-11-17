@@ -1,3 +1,19 @@
-<p>
-  contact-us works!
-</p>
+<form [formGroup]="contactUsForm" (ngSubmit)="submitContactForm()">
+  <label for="name">Name</label>
+  <input formControlName="name" id="name" type="text" placeholder="Name"/>
+
+  <label for="surname">Surname</label>
+  <input formControlName="surname" id="surname" type="text" placeholder="Surname"/>
+
+  <label for="email">Email</label>
+  <input formControlName="email" id="email" type="email" placeholder="Email"/>
+
+  <label for="phone">Phone</label>
+  <div formArrayName="phones">
+    <input *ngFor="let phone of contactUsForm.get('phones').controls; let i = index" formControlName="{{i}}" id="phone" type="text" placeholder="Phone"/>
+  </div>
+  <button type='button' (click)="addPhoneControl()">+</button>
+
+  <textarea formControlName="subject" rows="8" cols="80">Type your text</textarea>
+  <button>Send</button>
+</form>

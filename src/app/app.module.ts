@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {MomentModule} from 'ngx-moment';
 import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {ContactUsComponent} from './pages/contact-us/contact-us.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
@@ -28,7 +29,9 @@ import {CoreModule} from './core/core.module';
     BrowserModule,
     MomentModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
