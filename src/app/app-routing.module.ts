@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
+import {CountryResolverService} from './core/services/country-resolver.service';
 import {ContactUsComponent} from './pages/contact-us/contact-us.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {AboutUsComponent} from './pages/about-us/about-us.component';
@@ -32,6 +33,10 @@ const appRoute: Routes = [
   {
     path: 'news',
     loadChildren: './pages/news/news.module#NewsModule'
+  },
+  {
+    path: 'country',
+    loadChildren: './pages/country/country.module#CountryModule'
   },
   {
     path: '**',

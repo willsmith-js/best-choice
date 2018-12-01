@@ -1,0 +1,15 @@
+<div class="container">
+  <label for="search">Search</label>
+  <input #search type="text" (keyup)="searchCountry($event)" id="search">
+  <div *ngFor="let result of searchedResult">
+    <p>{{result.name}}</p>
+    <p><img [src]="result.flag" alt="" class="w-25">
+  </div>
+  <div *ngIf="search.value.length === 0 ">
+    <ul *ngFor="let country of countries">
+      <li [routerLink]="['/country', country.name.toLowerCase()]">{{country.name}}</li>
+      <li>{{country.capital}}</li>
+      <li><img [src]="country.flag" alt="" class="w-25"></li>
+    </ul>
+  </div>
+</div>
